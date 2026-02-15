@@ -5,7 +5,7 @@ import SlideUp from "../components/SlideUp";
 export default function LoginPage() {
     return (
 
-        <section className="relative bg-gray-200 min-h-screen flex items-center overflow-hidden">
+        <section className="relative bg-gray-200 min-h-screen flex items-center overflow-hidden pt-16">
     
             <img src={LoginImage} alt="Login Background" 
             className="absolute inset-0 w-full h-full object-cover "
@@ -69,11 +69,11 @@ export default function LoginPage() {
                             </button>
 
                             <p className="text-center text-sm mt-6">
-                        Don’t have an account?
-                        <span className="text-blue-600 cursor-pointer ml-1">
-                        Sign up
-                        </span>
-                    </p>
+                                Don’t have an account?
+                                <span className="text-blue-600 cursor-pointer ml-1">
+                                Sign up
+                                </span>
+                            </p>
 
                         </div>
                     </SlideUp>
