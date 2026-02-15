@@ -1,3 +1,5 @@
+import houseImage from '../assets/landingpage-house.png';
+
 function LandingPage() {
   return (
     <section className="bg-gray-200 min-h-screen flex items-center">
@@ -21,6 +23,10 @@ function LandingPage() {
                             Learn More
                         </button>
                     </div>
+                </div>
+
+                <div>
+                    <img src={houseImage} alt="Landing Page House" className="w-[520px] drop-shadow-2xl hover:shadow-3x1 object-cover" />
                 </div>
             </div>
         </div>
