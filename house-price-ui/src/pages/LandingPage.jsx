@@ -1,4 +1,5 @@
 import houseImage from '../assets/landingpage-house.png';
+import { Link } from 'react-router-dom';
 
 function LandingPage() {
   return (
