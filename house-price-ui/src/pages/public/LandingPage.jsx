@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import houseImage from '../assets/landingpage-house.png';
-import SlideUp from '../components/SlideUp';
+import SlideUp from '../../components/SlideUp';
 import { Link } from 'react-router-dom';
 
 function LandingPage() {

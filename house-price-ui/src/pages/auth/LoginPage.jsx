@@ -1,6 +1,6 @@
-import NavBar from "../components/NavBar";
+import NavBar from "../../components/NavBar";
 import LoginImage from '../assets/login-bg.jpg';
-import SlideUp from "../components/SlideUp";
+import SlideUp from "../../components/SlideUp";
 
 export default function LoginPage() {
     return (
