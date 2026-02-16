@@ -11,9 +11,28 @@ export default function NavBar() {
                 </div>
 
                 <ul className="flex space-x-9 text-gray-600"> 
-                    <li><a href="#" className="hover:text-blue-600 transition">Home</a></li>
-                    <li><a href="#" className="hover:text-blue-600 transition">About</a></li>
-                    <li><a href="#" className="hover:text-blue-600 transition">Contact</a></li>
+                    <li>
+                        <Link to="/predict" className="hover:text-blue-600 transition">
+                            Predict
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to="/dashboard" className="hover:text-blue-600 transition">
+                            Dashboard
+                        </Link>
+                    </li>
+
+                    <li>
+                        <Link to="/houses" className="hover:text-blue-600 transition">
+                            Browse Houses
+                        </Link>
+                    </li>
+
+                    <li>
+                        <Link to="/history" className="hover:text-blue-600 transition">
+                            History
+                        </Link>
+                    </li>
                 </ul>
 
                 <button className="md:hidden">
