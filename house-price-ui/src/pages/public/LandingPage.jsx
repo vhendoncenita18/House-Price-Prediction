@@ -7,6 +7,13 @@ import { Link } from 'react-router-dom';
 import BgImage from '../../assets/bg-landingpage-houses.jpg';
 
 function LandingPage() {
+      useEffect(() => {
+    fetch("http://localhost:5000")
+      .then(res => res.text())
+      .then(data => console.log("Backend says:", data))
+      .catch(err => console.error(err));
+  }, []);
+
     const houses = 
         [
             {
