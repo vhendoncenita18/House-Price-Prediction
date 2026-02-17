@@ -1,11 +1,12 @@
 import HouseCard from "../../components/HouseCard";
+import LandingPageMansion from "../../assets/LandingPageMansion.jpg";
 
 export default function HousePage() {
     const houses = 
     [
         {
             id: 1,
-            image: "/sample1.jpg",
+            image: LandingPageMansion,
             location: "Cebu City",
             beds: 3,
             baths: 2,

@@ -5,7 +5,7 @@ import SlideUp from "../../components/SlideUp";
 export default function LoginPage() {
     return (
 
-        <section className="relative bg-gray-200 min-h-screen flex items-center overflow-hidden pt-16">
+        <section className="relative bg-gray-200 min-h-screen flex items-center overflow-hidden">
     
             <img src={LoginImage} alt="Login Background" 
             className="absolute inset-0 w-full h-full object-cover "
@@ -20,7 +20,7 @@ export default function LoginPage() {
                             <h1 className="text-5xl font-bold leading-tight">
                                 Welcome Back!
                             </h1>
-                            <p className="mt-4 text-lg text-gray-300">
+                            <p className="mt-4 text-2xl text-gray-300">
                                 Predict house prices using AI powered machine learning.
                                 Fast. Accurate. Smart.
                             </p>
