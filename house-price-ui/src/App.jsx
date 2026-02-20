@@ -10,6 +10,8 @@ import Predict from './pages/public/Predict'
 import History from './pages/public/History'
 import Dashboard from './pages/public/Dashboard'
 import HousePage from './pages/public/HousePage'
+import SignupPage from './pages/auth/SignupPage'
+import ProtectedRoute from './components/ProtectedRoute'
 
 function App() {
   return (
@@ -20,8 +22,11 @@ function App() {
           <Route path="/login" element={<LoginPage />}/>
           <Route path="/predict" element={<Predict />}/>
           <Route path="/history" element={<History />}/>
-          <Route path="/dashboard" element={<Dashboard />}/>
           <Route path="/houses" element={<HousePage />}/>
+          <Route path="/signup" element={<SignupPage />}/>
+
+          {/*Protected Routes*/}
+          <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
         </Route>
       </Routes>
     </>

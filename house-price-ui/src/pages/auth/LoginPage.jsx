@@ -1,8 +1,54 @@
 import NavBar from "../../components/NavBar";
 import LoginImage from '../../assets/login-bg.jpg';
 import SlideUp from "../../components/SlideUp";
+import { Link } from "react-router-dom";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function LoginPage() {
+
+    
+
+    const navigate = useNavigate();
+
+    const [form, setForm] = useState({
+        email: "",
+        password: ""
+    });
+
+    const handleChange = (e) => {
+        setForm({
+            ...form,
+            [e.target.name]: e.target.value
+        });
+    };
+
+    const handleSubmit = async () => {
+    try {
+        const res = await fetch("http://localhost:5000/api/auth/login", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(form)
+        });
+
+        const data = await res.json();
+
+        if (res.ok) {
+        localStorage.setItem("token", data.token);
+        localStorage.setItem("user", JSON.stringify(data.user));
+        alert("Login successful!");
+        navigate("/dashboard");
+        } else {
+        alert(data.message);
+        }
+
+    } catch (err) {
+        alert("Login failed");
+    }
+    };
+
     return (
 
         <section className="relative bg-gray-200 min-h-screen flex items-center overflow-hidden">
@@ -35,22 +81,26 @@ export default function LoginPage() {
 
                             <input
                                 type="email"
+                                name="email"
                                 placeholder="Email"
+                                onChange={handleChange}
                                 className="w-full border rounded-lg px-3 py-2 mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500"
                             />
 
-                            <input 
+                            <input
                                 type="password"
+                                name="password"
                                 placeholder="Password"
+                                onChange={handleChange}
                                 className="w-full border rounded-lg px-3 py-2 mb-6 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                             />
+                            />
 
                             {/*Need alisdan og button or a*/}
                              <div className="text-right text-sm text-blue-600 mb-4 cursor-pointer">
                                 Forgot password?
                             </div>
                             
-                            <button className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition">
+                            <button className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition" button onClick={handleSubmit}>
                                 Login
                             </button>
 
@@ -70,9 +120,9 @@ export default function LoginPage() {
 
                             <p className="text-center text-sm mt-6">
                                 Don’t have an account?
-                                <span className="text-blue-600 cursor-pointer ml-1">
-                                Sign up
-                                </span>
+                                <Link to="/signup" className="text-blue-600 ml-1">
+                                    Sign up
+                                </Link>
                             </p>
 
                         </div>

@@ -51,13 +51,17 @@ function LandingPage() {
                         </p>
                         
                         <div className="mt-6">
-                            <button className="bg-blue-600 text-white px-6 py-4 rounded-lg hover:bg-blue-700 transition">
-                                Get Started
-                            </button>
+                            <Link to="/predict">
+                                <button className="bg-blue-600 text-white px-6 py-4 rounded-lg hover:bg-blue-700 transition">
+                                    Learn More
+                                </button>
+                            </Link> 
 
-                            <button className="border border-blue-600 px-6 py-4 rounded-lg hover:bg-blue-50 transition ml-4 ">
-                                Learn More
-                            </button>
+                            <Link to="/login">
+                                <button className="border border-blue-600 px-6 py-4 rounded-lg hover:bg-blue-50 transition ml-4 ">
+                                    Login
+                                </button>
+                            </Link>
                         </div>
                     </div>
                 </SlideUp>
