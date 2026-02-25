@@ -5,6 +5,7 @@ import HouseCard from '../../components/HouseCard';
 import LandingPageMansion from "../../assets/LandingPageMansion.jpg";
 import { Link } from 'react-router-dom';
 import BgImage from '../../assets/bg-landingpage-houses.jpg';
+import ServiceCard from '../../components/ServiceCard';
 
 function LandingPage() {
       useEffect(() => {
@@ -78,12 +79,38 @@ function LandingPage() {
         </div>
     </section>
 
-    
+    <section className="bg-gray-300 min-h-screen py-10">
+
+        <SlideUp>
+            <div className="max-w-7xl mx-auto px-6">
+                <div className="items-center gap-6 mb-10 justify-center">
+                    
+                    <div className="">
+                        <p className="text-black font-bold text-1xl text-center">Our Services</p>
+                        <h1 className="text-3xl font-bold text-black text-center">WHAT WE OFFER</h1>
+                        <p className="text-gray-700 text-center px-16">We deliver highly accurate and data-driven house price predictions powered by advanced AI algorithms that analyze market trends, location factors, and property features in real time—giving you smarter insights, better decisions, and a competitive edge in the real estate market.</p>
+                    </div>
+                        
+                    <div className="grid md:grid-cols-3 gap-8 items-start mt-10">
+
+                        <ServiceCard service={{ icon: "🤖", title: "AI-Powered Predictions", description: "Our system uses advanced machine learning algorithms to accurately predict house prices based on property features such as location, size, number of bedrooms, and amenities. This helps users make smarter buying and selling decisions with data-driven insights." }} />
+
+                        <ServiceCard service={{ icon: "🏠", title: "Smart Property Management Dashboard", description: "Manage and monitor your properties in one centralized dashboard. Track listings, view price predictions, manage property history, and organize your real estate data efficiently with a clean and user-friendly interface." }} />
+
+                        <ServiceCard service={{ icon: "📊", title: "Comprehensive Market Analysis", description: "Gain insights into real estate market trends with our comprehensive analysis tools. Access historical price data, neighborhood statistics, and market forecasts to make informed decisions whether you're buying, selling, or investing in properties." }} />
+                    </div>
+                    
+
+                </div>
+            </div>
+        </SlideUp>
+    </section>
+
     <section className="bg-white min-h-screen pt-16 relative overflow-hidden">
         <img src={BgImage} alt="Login Background" 
                 className="absolute inset-0 w-full h-full object-cover z-0"
         />
-        <div className="absolute inset-0 bg-black/50"></div>
+        <div className="absolute inset-0 bg-black/60"></div>
         <div className="relative z-10">
             <SlideUp delay={120} duration={800} distance={28} className="transform">
                 <div className="max-w-7xl mx-auto px-6 w-full">
@@ -104,6 +131,8 @@ function LandingPage() {
             </SlideUp>
         </div>
     </section>
+
+    
     </>
   )
 }
