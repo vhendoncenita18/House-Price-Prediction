@@ -67,6 +67,7 @@ export default function LoginPage() {
               <h2 className="text-2xl text-center text-gray-800 mb-6 font-bold">Login to your account</h2>
 
               <input
+                required
                 type="email"
                 name="email"
                 placeholder="Email"
@@ -75,6 +76,7 @@ export default function LoginPage() {
               />
 
               <input
+                required
                 type="password"
                 name="password"
                 placeholder="Password"
@@ -82,7 +84,7 @@ export default function LoginPage() {
                 className="w-full border rounded-lg px-3 py-2 mb-6 focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
 
-              <div className="text-right text-sm text-blue-600 mb-4 cursor-pointer">Forgot password?</div>
+              <div className="text-right text-sm text-blue-600 mb-4 cursor-pointer hover:text-blue-900">Forgot password?</div>
 
               <button type="submit" className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition">
                 Login

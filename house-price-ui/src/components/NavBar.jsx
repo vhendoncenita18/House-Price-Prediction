@@ -40,6 +40,12 @@ export default function NavBar() {
 
       <ul className="flex space-x-9 text-gray-600">
         <li>
+          <Link to="/dashboard" className="hover:text-blue-600 transition">
+            Dashboard
+          </Link>
+        </li>
+
+        <li>
           <Link to="/predict" className="hover:text-blue-600 transition">
             Predict
           </Link>

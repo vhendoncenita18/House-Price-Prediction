@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import SlideUp from "../../components/SlideUp";
 import LoginImage from "../../assets/login-bg.jpg";
 
@@ -74,48 +74,53 @@ export default function SignupPage() {
           </h2>
 
           <form onSubmit={handleSubmit} className="space-y-3">
-    
-            <input name="firstName" placeholder="First Name" onChange={handleChange}
-              className="w-full border rounded-lg px-3 py-2" />
+            <div className="grid grid-cols-3 gap-1">
+              <input name="firstName" placeholder="First Name" onChange={handleChange}
+                className="w-full border rounded-lg px-3 py-2" required />
 
-            <input name="middleName" placeholder="Middle Name" onChange={handleChange}
-              className="w-full border rounded-lg px-3 py-2" />
+              <input name="middleName" placeholder="Middle Name" onChange={handleChange}
+                className="w-full border rounded-lg px-3 py-2"  required/>
 
-            <input name="lastName" placeholder="Last Name" onChange={handleChange}
-              className="w-full border rounded-lg px-3 py-2" />
+              <input name="lastName" placeholder="Last Name" onChange={handleChange}
+                className="w-full border rounded-lg px-3 py-2" required />
+            </div>
             
-            <input type="date" name="dateOfBirth" onChange={handleChange}
-              className="w-full border rounded-lg px-3 py-2" />
+            <div className="grid grid-cols-2 gap-1">
+              <input type="date" name="dateOfBirth" onChange={handleChange}
+                className="w-full border rounded-lg px-3 py-2" required />
 
-            <select name="gender" onChange={handleChange}
-              className="w-full border rounded-lg px-3 py-2">
-              <option value="">Select Gender</option>
-              <option>Male</option>
-              <option>Female</option>
-            </select>
+              <select name="gender" onChange={handleChange}
+                className="w-full border rounded-lg px-3 py-2" required>
+                <option value="">Select Gender</option>
+                <option>Male</option>
+                <option>Female</option>
+              </select>
+            </div>
+            
 
             <input type="email" name="email" placeholder="Email"
               onChange={handleChange}
-              className="w-full border rounded-lg px-3 py-2" />
+              className="w-full border rounded-lg px-3 py-2"  required/>
 
             <input name="username" placeholder="Username"
               onChange={handleChange}
-              className="w-full border rounded-lg px-3 py-2" />
+              className="w-full border rounded-lg px-3 py-2" required />
 
             <input type="password" name="password" placeholder="Password"
               onChange={handleChange}
-              className="w-full border rounded-lg px-3 py-2" />
+              className="w-full border rounded-lg px-3 py-2" required/>
 
             <input type="password" name="confirmPassword"
               placeholder="Confirm Password"
               onChange={handleChange}
-              className="w-full border rounded-lg px-3 py-2" />
+              className="w-full border rounded-lg px-3 py-2" required />
 
             <button className="w-full bg-blue-600 text-white py-2 rounded-lg">
               Sign Up
             </button>
 
           </form>
+          <p className='text-end mt-2 text-blue-700'><Link to="/login">Login</Link></p>
         </SlideUp>
 
       </div>

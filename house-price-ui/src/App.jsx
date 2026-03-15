@@ -13,21 +13,14 @@ import PublicRoute from './components/PublicRoute';
 function App() {
   return (
     <Routes>
-      <Route element={<MainLayout />}>
-        <Route path="/" element={<LandingPage />} />
-        <Route path="/predict" element={<Predict />} />
-        <Route path="/history" element={<History />} />
-        <Route path="/houses" element={<HousePage />} />
-
-        <Route
+      <Route
           path="/login"
           element={
             <PublicRoute>
               <LoginPage />
             </PublicRoute>
           }
-        />
-        <Route
+        /><Route
           path="/signup"
           element={
             <PublicRoute>
@@ -35,6 +28,13 @@ function App() {
             </PublicRoute>
           }
         />
+
+      
+      <Route element={<MainLayout />}>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/predict" element={<Predict />} />
+        <Route path="/history" element={<History />} />
+        <Route path="/houses" element={<HousePage />} />
 
         <Route
           path="/dashboard"
